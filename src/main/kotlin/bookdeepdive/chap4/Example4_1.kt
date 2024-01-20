@@ -1,13 +1,21 @@
 package bookdeepdive.chap4
 
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 import mu.KotlinLogging
 
 private val log = KotlinLogging.logger {  }
-fun main() = runBlocking {
+
+// main 스레드: Before
+// kotlinx.coroutines.DefaultExecutor 스레드: After
+suspend fun main() {
     myFunction()
 }
+
+// main 스레드: Before
+// main 스레드: After
+//fun main() = runBlocking {
+//    myFunction()
+//}
 
 private suspend fun myFunction() {
     log.info { "Before" }
