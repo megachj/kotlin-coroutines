@@ -1,4 +1,4 @@
-package bookdeepdive.chap6_2
+package bookdeepdive.chap7_2
 
 import bookdeepdive.log
 import kotlinx.coroutines.CoroutineName
@@ -8,7 +8,6 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlin.coroutines.coroutineContext
 
 private fun CoroutineScope.log(msg: String) {
     val name = coroutineContext[CoroutineName]?.name
