@@ -1,19 +1,27 @@
 package bookdeepdive.chap4
 
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 import mu.KotlinLogging
 
 private val log = KotlinLogging.logger {}
 
-fun main() = runBlocking {
+suspend fun main() {
     printUser("chimchak")
 }
 
+//fun main() = runBlocking {
+//    printUser("chimchak")
+//}
+
+/**
+ * 값을 받아 재개되는 함수
+ * -> 함수가 값으로 재개되었다면 결과는 Result.Success(value) 가 된다. 결과를 리턴하면서 재개되었을 때를 말한다.
+ * -> 함수가 예외로 재개되었다면 결과는 Result.Failure(exception) 이 된다. 이때는 예외를 던진다.
+ */
 private suspend fun printUser(token: String) {
     log.info { "Before" }
     val userId = getUserId(token)
-    log.info("Got userId: $userId")
+    log.info { "Got userId: $userId" }
 
     val userName = getUserName(userId, token)
     log.info { "${User(userId, userName)}" }

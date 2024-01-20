@@ -17,6 +17,9 @@ suspend fun main() {
 //    myFunction()
 //}
 
+/**
+ * 아주 간단한 함수
+ */
 private suspend fun myFunction() {
     log.info { "Before" }
     delay(1000)
