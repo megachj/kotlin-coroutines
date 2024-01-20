@@ -1,4 +1,4 @@
-package bookdeepdive.chap5_3_1
+package bookdeepdive.chap6_3_1
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async

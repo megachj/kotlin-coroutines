@@ -1,4 +1,4 @@
-package bookdeepdive.chap5_2
+package bookdeepdive.chap6_2
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking

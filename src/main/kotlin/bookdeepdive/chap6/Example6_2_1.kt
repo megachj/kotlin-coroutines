@@ -1,4 +1,4 @@
-package bookdeepdive.chap5_2_1
+package bookdeepdive.chap6_2_1
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
