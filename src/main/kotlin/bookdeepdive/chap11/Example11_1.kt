@@ -8,6 +8,7 @@ import kotlinx.coroutines.runBlocking
 // 0: main runblocking
 // 1: coroutineScope, coroutineScope
 fun main() = runBlocking {
+    // coroutineScope { ... } 동작 방식은 async { ... }.await() 과 비슷하다.
     val a = coroutineScope {
         delay(1000)
         10
