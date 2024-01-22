@@ -5,6 +5,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.yield
@@ -17,6 +18,9 @@ suspend fun main() = coroutineScope {
     println()
 
     launch { ex3() }.join()
+    println()
+
+    launch { ex4() }.join()
     println()
 }
 
@@ -66,5 +70,21 @@ private suspend fun ex3() = coroutineScope {
     delay(1100)
     job.cancelAndJoin() // 부모 코루틴이 취소되므로 자식 코루틴도 취소된다.
 
+    log.info { "Cancelled successfully" }
+}
+
+// 잡 중간마다 ensureActive() 로 활성화 상태인지 검증한다
+private suspend fun ex4() = coroutineScope {
+    val job = Job()
+    launch(job) {
+        repeat(1000) { num ->
+            Thread.sleep(200)
+            ensureActive()
+            log.info { "Printing $num" }
+        }
+    }
+
+    delay(1100)
+    job.cancelAndJoin()
     log.info { "Cancelled successfully" }
 }
