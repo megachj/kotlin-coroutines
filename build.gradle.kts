@@ -30,6 +30,12 @@ tasks.test {
     useJUnitPlatform()
 }
 
+// 라이브러리
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    from(sourceSets["main"].allSource)
+}
+
 kotlin {
     jvmToolchain(19)
 }
