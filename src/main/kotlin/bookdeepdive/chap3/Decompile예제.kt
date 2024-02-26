@@ -1,4 +1,4 @@
-package bookdeepdive.chap3
+package bookdeepdive.chap3.p99
 
 import bookdeepdive.log
 import kotlin.concurrent.thread
