@@ -16,10 +16,7 @@ suspend fun main() {
 //    중단지점이_존재하는_예제2()
 //    printLine()
 
-//    중단지점이_존재하고_재개하는_예제()
-//    printLine()
-
-    중단지점이_존재하고_잠시_정지된_뒤_재개되는_다_스레드_실행()
+    중단지점이_존재하고_재개하는_예제()
     printLine()
 }
 
@@ -54,22 +51,6 @@ private suspend fun 중단지점이_존재하고_재개하는_예제() {
         // 코루틴을 중단하고 바로 재개한다.
         continuation.resume(Unit)
     }
-    // 재개가 되어서 After 가 실행된다.
-    log.info { "After" }
-}
-
-private suspend fun 중단지점이_존재하고_잠시_정지된_뒤_재개되는_다_스레드_실행() {
-    log.info { "Before" }
-
-    suspendCoroutine<Unit> { continuation ->
-        thread {
-            log.info { "Suspended" }
-            Thread.sleep(1000)
-            continuation.resume(Unit)
-            log.info { "Resumed" }
-        }
-    }
-
     // 재개가 되어서 After 가 실행된다.
     log.info { "After" }
 }
