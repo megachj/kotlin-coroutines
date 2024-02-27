@@ -2,6 +2,7 @@ import bookdeepdive.chap28.AnkiConnector;
 import bookdeepdive.chap28.p01.AnkiConnectorBlocking;
 import bookdeepdive.chap28.p02.AnkiConnectorCallback;
 import bookdeepdive.chap28.p03.AnkiConnectorFuture;
+import bookdeepdive.chap28.p04.AnkiConnectorReactor;
 import kotlin.Result;
 
 import java.util.concurrent.CompletableFuture;
@@ -11,14 +12,18 @@ public class JavaTest {
         중단함수_테스트();
         System.out.println();
 
-        System.out.println("블로킹함수 테스트");
+        System.out.println("---------- 블로킹함수 테스트");
         블로킹함수_테스트();
         System.out.println();
 
         // 콜백함수
 
-        System.out.println("퓨처함수 테스트");
+        System.out.println("---------- 퓨처함수 테스트");
         퓨처함수_테스트();
+        System.out.println();
+
+        System.out.println("---------- 리액터함수 테스트");
+        리액터함수_테스트();
         System.out.println();
     }
 
@@ -48,6 +53,12 @@ public class JavaTest {
         AnkiConnectorFuture connectorFuture = new AnkiConnectorFuture();
         CompletableFuture<Boolean> future = connectorFuture.checkConnection();
         System.out.printf("[%s] 결과: %s%n", Thread.currentThread().getName(), future.get());
+    }
+
+    private static void 리액터함수_테스트() {
+        AnkiConnectorReactor connectorReactor = new AnkiConnectorReactor();
+        boolean connection = connectorReactor.checkConnection().block();
+        System.out.printf("[%s] 결과: %s%n", Thread.currentThread().getName(), connection);
     }
 
     @FunctionalInterface
