@@ -1,9 +1,8 @@
-package bookdeepdive.chap4
+package bookdeepdive.chap4.p04
 
+import bookdeepdive.log
 import kotlinx.coroutines.delay
-import mu.KotlinLogging
 
-private val log = KotlinLogging.logger {  }
 suspend fun main() {
     a()
 }

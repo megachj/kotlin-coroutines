@@ -1,17 +1,11 @@
-package bookdeepdive.chap4
+package bookdeepdive.chap4.p03
 
+import bookdeepdive.log
 import kotlinx.coroutines.delay
-import mu.KotlinLogging
-
-private val log = KotlinLogging.logger {}
 
 suspend fun main() {
     printUser("chimchak")
 }
-
-//fun main() = runBlocking {
-//    printUser("chimchak")
-//}
 
 /**
  * 값을 받아 재개되는 함수
