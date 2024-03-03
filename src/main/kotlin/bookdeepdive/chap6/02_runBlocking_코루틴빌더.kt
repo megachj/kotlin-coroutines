@@ -1,13 +1,13 @@
-package bookdeepdive.chap6_2
+package bookdeepdive.chap6.p02
 
+import bookdeepdive.log
+import bookdeepdive.printLine
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import mu.KotlinLogging
 
-private val log = KotlinLogging.logger {  }
 fun main() {
     example1()
-    example2()
+    printLine("예제 1")
 }
 
 private fun example1() {
@@ -23,15 +23,5 @@ private fun example1() {
         delay(1000L)
         log.info { "World!" }
     }
-    log.info { "Hello, " }
-}
-
-private fun example2() {
-    Thread.sleep(1000L)
-    log.info { "World!" }
-    Thread.sleep(1000L)
-    log.info { "World!" }
-    Thread.sleep(1000L)
-    log.info { "World!" }
     log.info { "Hello, " }
 }
