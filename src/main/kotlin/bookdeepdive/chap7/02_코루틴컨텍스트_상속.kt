@@ -1,6 +1,7 @@
-package bookdeepdive.chap7_2
+package bookdeepdive.chap7.p02
 
 import bookdeepdive.log
+import bookdeepdive.printLine
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async
@@ -9,17 +10,17 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
+fun main() = runBlocking(CoroutineName("main")) {
+    `예제1`()
+    printLine("예제1")
+
+    `예제2`()
+    printLine("예제2")
+}
+
 private fun CoroutineScope.log(msg: String) {
     val name = coroutineContext[CoroutineName]?.name
     log.info { "[$name] $msg" }
-}
-
-fun main() = runBlocking(CoroutineName("main")) {
-    `예제1`()
-    println()
-
-    `예제2`()
-    println()
 }
 
 private suspend fun `예제1`() = coroutineScope {

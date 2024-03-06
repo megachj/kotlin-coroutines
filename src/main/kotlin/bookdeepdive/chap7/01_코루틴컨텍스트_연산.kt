@@ -1,6 +1,7 @@
-package bookdeepdive.chap7_1
+package bookdeepdive.chap7.p01
 
 import bookdeepdive.log
+import bookdeepdive.printLine
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Job
 import kotlin.coroutines.CoroutineContext
@@ -8,22 +9,22 @@ import kotlin.coroutines.EmptyCoroutineContext
 
 fun main() {
     `CoroutineContext에서 원소 찾기`()
-    println()
+    printLine("원소 찾기 예제")
 
     `컨텍스트 더하기`()
-    println()
+    printLine("더하기 예제")
 
     `컨텍스트 더하기2`()
-    println()
+    printLine("더하기 예제2")
 
     `비어 있는 컨텍스트`()
-    println()
+    printLine("비어 있는 컨텍스트 예제")
 
     `원소 제거`()
-    println()
+    printLine("원소 제거 예제")
 
     `컨텍스트 폴딩`()
-    println()
+    printLine("컨텍스트 폴딩 예제")
 }
 
 private fun `CoroutineContext에서 원소 찾기`() {
