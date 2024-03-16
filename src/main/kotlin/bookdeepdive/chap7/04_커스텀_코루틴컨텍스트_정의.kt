@@ -1,4 +1,4 @@
-package bookdeepdive.chap7_3
+package bookdeepdive.chap7.p04
 
 import bookdeepdive.log
 import kotlinx.coroutines.launch
