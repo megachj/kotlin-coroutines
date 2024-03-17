@@ -1,6 +1,7 @@
-package bookdeepdive.chap8_5
+package bookdeepdive.chap8.p06
 
 import bookdeepdive.log
+import bookdeepdive.printLine
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
@@ -8,11 +9,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 suspend fun main(): Unit = coroutineScope {
-//    example1()
-//    println()
-
     example2()
-    println()
+    printLine("잡 팩토리로 생성한 잡의 자식들 기다리기 예제")
 }
 
 private suspend fun example1() = runBlocking {

@@ -1,4 +1,4 @@
-package bookdeepdive.chap8_2
+package bookdeepdive.chap8.p02
 
 import bookdeepdive.log
 import kotlinx.coroutines.Deferred

@@ -1,6 +1,7 @@
-package bookdeepdive.chap8_4
+package bookdeepdive.chap8.p05
 
 import bookdeepdive.log
+import bookdeepdive.printLine
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.job
@@ -9,10 +10,10 @@ import kotlinx.coroutines.runBlocking
 
 suspend fun main(): Unit = coroutineScope {
     example1()
-    println()
+    printLine("자식들 기다리기 예제1")
 
     example2()
-    println()
+    printLine("자식들 기다리기 예제2")
 }
 
 private suspend fun example1() = runBlocking {
